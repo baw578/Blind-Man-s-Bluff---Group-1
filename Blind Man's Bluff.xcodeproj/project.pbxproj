@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9416EA091485D17E00080900 /* card.m in Sources */ = {isa = PBXBuildFile; fileRef = 9416EA081485D17E00080900 /* card.m */; };
 		943705491468CA9D00755C5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943705481468CA9D00755C5B /* UIKit.framework */; };
 		9437054B1468CA9D00755C5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437054A1468CA9D00755C5B /* Foundation.framework */; };
 		9437054D1468CA9D00755C5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437054C1468CA9D00755C5B /* CoreGraphics.framework */; };
@@ -15,22 +16,29 @@
 		943705591468CA9D00755C5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 943705581468CA9D00755C5B /* AppDelegate.m */; };
 		9437055C1468CA9D00755C5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437055B1468CA9D00755C5B /* ViewController.m */; };
 		9437055F1468CA9D00755C5B /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9437055D1468CA9D00755C5B /* ViewController.xib */; };
+		94A1AC1014BB9F1800DCF9A3 /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A1AC0F14BB9F1800DCF9A3 /* cards.png */; };
+		94A1AC1414BBA56200DCF9A3 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A1AC1314BBA56200DCF9A3 /* Deck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9416EA071485D17E00080900 /* card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = card.h; sourceTree = "<group>"; };
+		9416EA081485D17E00080900 /* card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = card.m; sourceTree = "<group>"; };
 		943705441468CA9D00755C5B /* Blind Man's Bluff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blind Man's Bluff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		943705481468CA9D00755C5B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9437054A1468CA9D00755C5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9437054C1468CA9D00755C5B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		943705501468CA9D00755C5B /* Blind Man's Bluff-Info.plist */ = {isa = PBXFileReference; path = "Blind Man's Bluff-Info.plist"; sourceTree = "<group>"; };
+		943705501468CA9D00755C5B /* Blind Man's Bluff-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Blind Man's Bluff-Info.plist"; sourceTree = "<group>"; };
 		943705521468CA9D00755C5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		943705541468CA9D00755C5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		943705561468CA9D00755C5B /* Blind Man's Bluff-Prefix.pch */ = {isa = PBXFileReference; path = "Blind Man's Bluff-Prefix.pch"; sourceTree = "<group>"; };
-		943705571468CA9D00755C5B /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		943705561468CA9D00755C5B /* Blind Man's Bluff-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blind Man's Bluff-Prefix.pch"; sourceTree = "<group>"; };
+		943705571468CA9D00755C5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		943705581468CA9D00755C5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9437055A1468CA9D00755C5B /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		9437055A1468CA9D00755C5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9437055B1468CA9D00755C5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9437055E1468CA9D00755C5B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		94A1AC0F14BB9F1800DCF9A3 /* cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cards.png; sourceTree = "<group>"; };
+		94A1AC1214BBA56200DCF9A3 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		94A1AC1314BBA56200DCF9A3 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +87,15 @@
 			children = (
 				943705571468CA9D00755C5B /* AppDelegate.h */,
 				943705581468CA9D00755C5B /* AppDelegate.m */,
+				94A1AC0F14BB9F1800DCF9A3 /* cards.png */,
 				9437055A1468CA9D00755C5B /* ViewController.h */,
 				9437055B1468CA9D00755C5B /* ViewController.m */,
 				9437055D1468CA9D00755C5B /* ViewController.xib */,
 				9437054F1468CA9D00755C5B /* Supporting Files */,
+				9416EA071485D17E00080900 /* card.h */,
+				9416EA081485D17E00080900 /* card.m */,
+				94A1AC1214BBA56200DCF9A3 /* Deck.h */,
+				94A1AC1314BBA56200DCF9A3 /* Deck.m */,
 			);
 			path = "Blind Man's Bluff";
 			sourceTree = "<group>";
@@ -150,6 +163,7 @@
 			files = (
 				943705531468CA9D00755C5B /* InfoPlist.strings in Resources */,
 				9437055F1468CA9D00755C5B /* ViewController.xib in Resources */,
+				94A1AC1014BB9F1800DCF9A3 /* cards.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +177,8 @@
 				943705551468CA9D00755C5B /* main.m in Sources */,
 				943705591468CA9D00755C5B /* AppDelegate.m in Sources */,
 				9437055C1468CA9D00755C5B /* ViewController.m in Sources */,
+				9416EA091485D17E00080900 /* card.m in Sources */,
+				94A1AC1414BBA56200DCF9A3 /* Deck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +292,7 @@
 				943705641468CA9D00755C5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

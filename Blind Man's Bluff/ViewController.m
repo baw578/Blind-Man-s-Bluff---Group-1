@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 
-@implementation ViewController
 
+@implementation ViewController
+@synthesize temp;
+
+ 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -20,6 +23,15 @@
 
 - (void)viewDidLoad
 {
+    temp = [[Deck alloc]initWithFullDeck];
+    
+    [temp shuffle];
+    Card * tempCard1 = [temp dealACard];
+    [tempCard1 logThisCard];
+    Card * tempCard2 = [temp dealACard];
+    [tempCard2 logThisCard];
+    Card * tempCard3 = [temp dealACard];
+    [tempCard3 logThisCard];    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -56,5 +68,32 @@
     // Return YES for supported orientations
     return YES;
 }
+
+/*
+ 
+ - (IBAction)moveToRight:(id)sender {
+ CGPoint currentPosition = playingCardSprite.center;
+ currentPosition.x += 73.0;
+ playingCardSprite.center = currentPosition;
+ }
+ 
+ - (IBAction)moveDown:(id)sender {
+ CGPoint currentPosition = playingCardSprite.center;
+ currentPosition.y += 98.0;
+ playingCardSprite.center = currentPosition;
+ }
+ 
+ - (IBAction)moveUp:(id)sender {
+ CGPoint currentPosition = playingCardSprite.center;
+ currentPosition.y -= 98.0;
+ playingCardSprite.center = currentPosition;
+ }
+ 
+ - (IBAction)moveToLeft:(id)sender {
+ CGPoint currentPosition = playingCardSprite.center;
+ currentPosition.x -= 73.0;
+ playingCardSprite.center = currentPosition;
+ }
+ */
 
 @end
