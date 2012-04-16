@@ -18,6 +18,7 @@
 		9437055F1468CA9D00755C5B /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9437055D1468CA9D00755C5B /* ViewController.xib */; };
 		94A1AC1014BB9F1800DCF9A3 /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A1AC0F14BB9F1800DCF9A3 /* cards.png */; };
 		94A1AC1414BBA56200DCF9A3 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A1AC1314BBA56200DCF9A3 /* Deck.m */; };
+		E647260B153CD9D10016B89F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E647260A153CD9D10016B89F /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		94A1AC0F14BB9F1800DCF9A3 /* cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cards.png; sourceTree = "<group>"; };
 		94A1AC1214BBA56200DCF9A3 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
 		94A1AC1314BBA56200DCF9A3 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		E6472609153CD9D10016B89F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
+		E647260A153CD9D10016B89F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				9416EA081485D17E00080900 /* card.m */,
 				94A1AC1214BBA56200DCF9A3 /* Deck.h */,
 				94A1AC1314BBA56200DCF9A3 /* Deck.m */,
+				E6472609153CD9D10016B89F /* Player.h */,
+				E647260A153CD9D10016B89F /* Player.m */,
 			);
 			path = "Blind Man's Bluff";
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				9437055C1468CA9D00755C5B /* ViewController.m in Sources */,
 				9416EA091485D17E00080900 /* card.m in Sources */,
 				94A1AC1414BBA56200DCF9A3 /* Deck.m in Sources */,
+				E647260B153CD9D10016B89F /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
