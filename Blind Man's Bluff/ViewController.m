@@ -49,7 +49,6 @@
     CGPoint currentPosition = playingCardSprite.center;
     currentPosition.x = tempCard1.cardCenter.x;
     currentPosition.y = tempCard1.cardCenter.y;
-    NSLog(@"cardCenter.x=%f",tempCard1.cardCenter.x);
     playingCardSprite.center = currentPosition;    
     
     
