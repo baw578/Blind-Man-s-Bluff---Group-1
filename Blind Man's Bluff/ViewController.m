@@ -10,7 +10,7 @@
 
 
 @implementation ViewController
-@synthesize temp, playingCardSprite, mainCardArea;
+@synthesize temp, playingCardSprite, mainCardArea, playingCardSprite2, mainCardArea2, playingCardSprite3, mainCardArea3;
 
  
 - (void)didReceiveMemoryWarning
@@ -42,15 +42,16 @@
     Card * tempCard1 = [temp dealACard];
     [tempCard1 logThisCard];
     
-    playingCardSprite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cards.png"]];
-    
-    mainCardArea = [[UIView alloc] initWithFrame:CGRectMake(80, 60, 74, 100)]; 
+    //display first delt card
+    if (!playingCardSprite) {
+        playingCardSprite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cards.png"]];}
+    if (!mainCardArea) {
+        mainCardArea = [[UIView alloc] initWithFrame:CGRectMake(80, 60, 74, 100)]; }
     
     CGPoint currentPosition = playingCardSprite.center;
     currentPosition.x = tempCard1.cardCenter.x;
     currentPosition.y = tempCard1.cardCenter.y;
-    playingCardSprite.center = currentPosition;    
-    
+    playingCardSprite.center = currentPosition;
     
     mainCardArea.clipsToBounds = YES;
     
@@ -61,9 +62,41 @@
     
     Card * tempCard2 = [temp dealACard];
     [tempCard2 logThisCard];
+    
+    //display second delt card
+    if (!playingCardSprite2) {
+        playingCardSprite2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cards.png"]];}
+    if (!mainCardArea2) {
+        mainCardArea2 = [[UIView alloc] initWithFrame:CGRectMake(80, 180, 74, 100)]; }
+    
+    CGPoint currentPosition2 = playingCardSprite2.center;
+    currentPosition2.x = tempCard2.cardCenter.x;
+    currentPosition2.y = tempCard2.cardCenter.y;
+    playingCardSprite2.center = currentPosition2;
+    
+    mainCardArea2.clipsToBounds = YES;
+    
+    [mainCardArea2 addSubview:playingCardSprite2];
+    [self.view addSubview:mainCardArea2];
+    
     Card * tempCard3 = [temp dealACard];
     [tempCard3 logThisCard]; 
     
+    //display third delt card
+    if (!playingCardSprite3) {
+        playingCardSprite3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cards.png"]];}
+    if (!mainCardArea3) {
+        mainCardArea3 = [[UIView alloc] initWithFrame:CGRectMake(80, 300, 74, 100)]; }
+    
+    CGPoint currentPosition3 = playingCardSprite3.center;
+    currentPosition3.x = tempCard3.cardCenter.x;
+    currentPosition3.y = tempCard3.cardCenter.y;
+    playingCardSprite3.center = currentPosition3;
+    
+    mainCardArea3.clipsToBounds = YES;
+    
+    [mainCardArea3 addSubview:playingCardSprite3];
+    [self.view addSubview:mainCardArea3];
 
 }
 
@@ -94,31 +127,7 @@
     return YES;
 }
 
-/*
- 
- - (IBAction)moveToRight:(id)sender {
- CGPoint currentPosition = playingCardSprite.center;
- currentPosition.x += 73.0;
- playingCardSprite.center = currentPosition;
- }
- 
- - (IBAction)moveDown:(id)sender {
- CGPoint currentPosition = playingCardSprite.center;
- currentPosition.y += 98.0;
- playingCardSprite.center = currentPosition;
- }
- 
- - (IBAction)moveUp:(id)sender {
- CGPoint currentPosition = playingCardSprite.center;
- currentPosition.y -= 98.0;
- playingCardSprite.center = currentPosition;
- }
- 
- - (IBAction)moveToLeft:(id)sender {
- CGPoint currentPosition = playingCardSprite.center;
- currentPosition.x -= 73.0;
- playingCardSprite.center = currentPosition;
- }
- */
-
+- (IBAction)dealCardsButton:(id)sender {
+    [self dealCards];
+}
 @end
