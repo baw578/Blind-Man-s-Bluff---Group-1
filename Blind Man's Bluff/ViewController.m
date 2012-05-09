@@ -10,7 +10,7 @@
 
 
 @implementation ViewController
-@synthesize temp;
+@synthesize temp, playingCardSprite, mainCardArea;
 
  
 - (void)didReceiveMemoryWarning
@@ -23,15 +23,7 @@
 
 - (void)viewDidLoad
 {
-    temp = [[Deck alloc]initWithFullDeck];
-    
-    [temp shuffle];
-    Card * tempCard1 = [temp dealACard];
-    [tempCard1 logThisCard];
-    Card * tempCard2 = [temp dealACard];
-    [tempCard2 logThisCard];
-    Card * tempCard3 = [temp dealACard];
-    [tempCard3 logThisCard];    
+    [self dealCards];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -42,6 +34,40 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
+
+-(void) dealCards{
+    temp = [[Deck alloc]initWithFullDeck];
+    
+    [temp shuffle];
+    Card * tempCard1 = [temp dealACard];
+    [tempCard1 logThisCard];
+    
+    playingCardSprite = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cards.png"]];
+    
+    mainCardArea = [[UIView alloc] initWithFrame:CGRectMake(80, 60, 74, 100)]; 
+    
+    CGPoint currentPosition = playingCardSprite.center;
+    currentPosition.x = tempCard1.cardCenter.x;
+    currentPosition.y = tempCard1.cardCenter.y;
+    NSLog(@"cardCenter.x=%f",tempCard1.cardCenter.x);
+    playingCardSprite.center = currentPosition;    
+    
+    
+    mainCardArea.clipsToBounds = YES;
+    
+    [mainCardArea addSubview:playingCardSprite];
+    [self.view addSubview:mainCardArea];
+    
+    
+    
+    Card * tempCard2 = [temp dealACard];
+    [tempCard2 logThisCard];
+    Card * tempCard3 = [temp dealACard];
+    [tempCard3 logThisCard]; 
+    
+
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

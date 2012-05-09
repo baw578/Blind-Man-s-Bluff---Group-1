@@ -12,6 +12,9 @@
 @interface ViewController : UIViewController
 @property (nonatomic, strong) Deck * temp;
 
+@property (nonatomic, strong)UIView * mainCardArea;
+@property (nonatomic, strong)UIImageView * playingCardSprite;
+
 // Code created by Brian Lewis
 //Testing Github access
 // End of code created by Brian Lewis
