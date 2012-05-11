@@ -154,8 +154,8 @@ int chipAmountPlayer4;
         mainCardArea4 = [[UIView alloc] initWithFrame:CGRectMake(125, 523, 70, 96)]; }
     
     CGPoint currentPosition4 = playingCardSprite4.center;
-    currentPosition4.x = tempCard3.cardCenter.x;
-    currentPosition4.y = (tempCard3.cardCenter.y-1);
+    currentPosition4.x = tempCard4.cardCenter.x;
+    currentPosition4.y = (tempCard4.cardCenter.y-1);
     playingCardSprite4.center = currentPosition4;
     
     mainCardArea4.clipsToBounds = YES;
