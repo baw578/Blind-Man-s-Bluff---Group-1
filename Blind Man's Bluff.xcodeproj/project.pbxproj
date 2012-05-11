@@ -15,9 +15,13 @@
 		943705551468CA9D00755C5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 943705541468CA9D00755C5B /* main.m */; };
 		943705591468CA9D00755C5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 943705581468CA9D00755C5B /* AppDelegate.m */; };
 		9437055C1468CA9D00755C5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437055B1468CA9D00755C5B /* ViewController.m */; };
+		948090C5155CA5A6008C080B /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948090C4155CA5A6008C080B /* GameController.m */; };
+		948090CF155CA798008C080B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948090CE155CA798008C080B /* MainStoryboard.storyboard */; };
+		948090D3155CA7B8008C080B /* pokerTable.png in Resources */ = {isa = PBXBuildFile; fileRef = 948090D0155CA7B8008C080B /* pokerTable.png */; };
+		948090D4155CA7B8008C080B /* pokerTableWelcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 948090D1155CA7B8008C080B /* pokerTableWelcome.png */; };
+		948090D5155CA7B8008C080B /* pot of gold.gif in Resources */ = {isa = PBXBuildFile; fileRef = 948090D2155CA7B8008C080B /* pot of gold.gif */; };
 		94A1AC1014BB9F1800DCF9A3 /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A1AC0F14BB9F1800DCF9A3 /* cards.png */; };
 		94A1AC1414BBA56200DCF9A3 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A1AC1314BBA56200DCF9A3 /* Deck.m */; };
-		E60BCBBC15536935003EC6DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60BCBBB15536935003EC6DE /* MainStoryboard.storyboard */; };
 		E647260B153CD9D10016B89F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E647260A153CD9D10016B89F /* Player.m */; };
 /* End PBXBuildFile section */
 
@@ -36,10 +40,15 @@
 		943705581468CA9D00755C5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9437055A1468CA9D00755C5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9437055B1468CA9D00755C5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		948090C3155CA5A6008C080B /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		948090C4155CA5A6008C080B /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		948090CE155CA798008C080B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		948090D0155CA7B8008C080B /* pokerTable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokerTable.png; sourceTree = "<group>"; };
+		948090D1155CA7B8008C080B /* pokerTableWelcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokerTableWelcome.png; sourceTree = "<group>"; };
+		948090D2155CA7B8008C080B /* pot of gold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "pot of gold.gif"; sourceTree = "<group>"; };
 		94A1AC0F14BB9F1800DCF9A3 /* cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cards.png; sourceTree = "<group>"; };
 		94A1AC1214BBA56200DCF9A3 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
 		94A1AC1314BBA56200DCF9A3 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
-		E60BCBBB15536935003EC6DE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E6472609153CD9D10016B89F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
 		E647260A153CD9D10016B89F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,11 +97,13 @@
 		9437054E1468CA9D00755C5B /* Blind Man's Bluff */ = {
 			isa = PBXGroup;
 			children = (
-				E60BCBBB15536935003EC6DE /* MainStoryboard.storyboard */,
+				948090CE155CA798008C080B /* MainStoryboard.storyboard */,
 				943705571468CA9D00755C5B /* AppDelegate.h */,
 				943705581468CA9D00755C5B /* AppDelegate.m */,
 				9437055A1468CA9D00755C5B /* ViewController.h */,
 				9437055B1468CA9D00755C5B /* ViewController.m */,
+				948090C3155CA5A6008C080B /* GameController.h */,
+				948090C4155CA5A6008C080B /* GameController.m */,
 				9416EA071485D17E00080900 /* card.h */,
 				9416EA081485D17E00080900 /* card.m */,
 				94A1AC1214BBA56200DCF9A3 /* Deck.h */,
@@ -119,6 +130,9 @@
 		E60BCBBE155369CB003EC6DE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				948090D0155CA7B8008C080B /* pokerTable.png */,
+				948090D1155CA7B8008C080B /* pokerTableWelcome.png */,
+				948090D2155CA7B8008C080B /* pot of gold.gif */,
 				94A1AC0F14BB9F1800DCF9A3 /* cards.png */,
 			);
 			name = Images;
@@ -176,7 +190,10 @@
 			files = (
 				943705531468CA9D00755C5B /* InfoPlist.strings in Resources */,
 				94A1AC1014BB9F1800DCF9A3 /* cards.png in Resources */,
-				E60BCBBC15536935003EC6DE /* MainStoryboard.storyboard in Resources */,
+				948090CF155CA798008C080B /* MainStoryboard.storyboard in Resources */,
+				948090D3155CA7B8008C080B /* pokerTable.png in Resources */,
+				948090D4155CA7B8008C080B /* pokerTableWelcome.png in Resources */,
+				948090D5155CA7B8008C080B /* pot of gold.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +210,7 @@
 				9416EA091485D17E00080900 /* card.m in Sources */,
 				94A1AC1414BBA56200DCF9A3 /* Deck.m in Sources */,
 				E647260B153CD9D10016B89F /* Player.m in Sources */,
+				948090C5155CA5A6008C080B /* GameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
