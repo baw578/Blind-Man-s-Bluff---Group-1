@@ -33,5 +33,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *player3NameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *player4NameLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *chipsPlayer1Label;
+@property (strong, nonatomic) IBOutlet UILabel *chipsPlayer2Label;
+@property (strong, nonatomic) IBOutlet UILabel *chipsPlayer3Label;
+@property (strong, nonatomic) IBOutlet UILabel *chipsPlayer4Label;
+
 
 @end

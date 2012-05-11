@@ -17,7 +17,15 @@
 @synthesize player2NameLabel;
 @synthesize player3NameLabel;
 @synthesize player4NameLabel;
+@synthesize chipsPlayer1Label;
+@synthesize chipsPlayer2Label;
+@synthesize chipsPlayer3Label;
+@synthesize chipsPlayer4Label;
 @synthesize temp, playingCardSprite, mainCardArea, playingCardSprite2, mainCardArea2, playingCardSprite3, mainCardArea3,playingCardSprite4, mainCardArea4;
+int chipAmountPlayer1;
+int chipAmountPlayer2;
+int chipAmountPlayer3;
+int chipAmountPlayer4;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +38,7 @@
 
 - (void)viewDidLoad
 {
+    [self setInitialChipCount];
     [self dealCards];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -41,6 +50,10 @@
     [self setPlayer2NameLabel:nil];
     [self setPlayer3NameLabel:nil];
     [self setPlayer4NameLabel:nil];
+    [self setChipsPlayer1Label:nil];
+    [self setChipsPlayer2Label:nil];
+    [self setChipsPlayer3Label:nil];
+    [self setChipsPlayer4Label:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -150,6 +163,22 @@
     [mainCardArea4 addSubview:playingCardSprite4];
     [self.view addSubview:mainCardArea4];
     
+}
+
+-(void)setInitialChipCount{
+    int chipStartingAmount = 2500;
+    chipAmountPlayer1 = chipStartingAmount;
+    chipAmountPlayer2 = chipStartingAmount;
+    chipAmountPlayer3 = chipStartingAmount;
+    chipAmountPlayer4 = chipStartingAmount;
+    [self updateChipLabels];
+}
+
+-(void)updateChipLabels{
+    chipsPlayer1Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer1];
+    chipsPlayer2Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer2];
+    chipsPlayer3Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer3];
+    chipsPlayer4Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer4];
 }
 
 - (IBAction)dealCardsButton:(id)sender {
