@@ -25,5 +25,13 @@
 - (IBAction)dealCardsButton:(id)sender;
 @property (nonatomic, strong)UIView * mainCardArea3;
 @property (nonatomic, strong)UIImageView * playingCardSprite3;
+@property (nonatomic, strong)UIView * mainCardArea4;
+@property (nonatomic, strong)UIImageView * playingCardSprite4;
+
+@property (strong, nonatomic) IBOutlet UILabel *player1NameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *player2NameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *player3NameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *player4NameLabel;
+
 
 @end

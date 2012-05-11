@@ -30,59 +30,59 @@
     switch (value) {
         case 1:
             cardValueName = @"Ace";
-            cardCenter.x = (73*7)-36;
+            cardCenter.x = 474;
             break;
         case 2:
             cardValueName = @"2";
-            cardCenter.x = (73*6)-36;
+            cardCenter.x = 400;
             break;
         case 3:
             cardValueName = @"3";
-            cardCenter.x = (73*5)-36;
+            cardCenter.x = 327;
             break;
         case 4:
             cardValueName = @"4";
-            cardCenter.x = (73*4)-36;
+            cardCenter.x = 255.5;
             break;
         case 5:
             cardValueName = @"5";
-            cardCenter.x = (73*3)-36;
+            cardCenter.x = 181;
             break;
         case 6:
             cardValueName = @"6";
-            cardCenter.x = (73*2)-36;
+            cardCenter.x = 108.5;
             break;
         case 7:
             cardValueName = @"7";
-            cardCenter.x = (73*1)-36;
+            cardCenter.x = 36.5;
             break;
         case 8:
             cardValueName = @"8";
-            cardCenter.x = -(73*1)+36;
+            cardCenter.x = -37;
             break;
         case 9:
             cardValueName = @"9";
-            cardCenter.x = -(73*1)-36;
+            cardCenter.x = -110;
             break;
         case 10:
             cardValueName = @"10";
-            cardCenter.x = -(73*2)-36;
+            cardCenter.x = -182.5;
             break;
         case 11:
             cardValueName = @"Jack";
-            cardCenter.x = -(73*3)-36;
+            cardCenter.x = -256;
             break;
         case 12:
             cardValueName = @"Queen";
-            cardCenter.x = -(73*4)-36;
+            cardCenter.x = -329;
             break;
         case 13:
             cardValueName = @"King";
-            cardCenter.x = -(73*5)-36;
+            cardCenter.x = -401.5;
             break;
         case 14:
             cardValueName = @"Ace";
-            cardCenter.x = (73*7)-36;
+            cardCenter.x = 474;
             break;
         default:
             cardValueName = @"No Known Card";
@@ -92,13 +92,13 @@
         cardCenter.y = (0);
     }
     if ([suit isEqualToString:@"Clubs"]) {
-        cardCenter.y = (+200);
+        cardCenter.y = (+196);
     }
     if ([suit isEqualToString:@"Diamonds"]) {
-        cardCenter.y = (-100);
+        cardCenter.y = (-98);
     }
     if ([suit isEqualToString:@"Spades"]) {
-        cardCenter.y = (+100);
+        cardCenter.y = (+98);
     }
     
     NSLog(@"%@ of %@",cardValueName,suit);

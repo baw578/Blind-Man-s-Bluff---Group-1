@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "GameController.h"
 
 
 @implementation ViewController
+@synthesize playerNameTextField;
 
  
 - (void)didReceiveMemoryWarning
@@ -28,6 +30,7 @@
 
 - (void)viewDidUnload
 {
+    [self setPlayerNameTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -59,4 +62,16 @@
     return YES;
 }
 
+- (IBAction)playerNameButton:(id)sender {
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"enterName"])
+	{
+		GameController *viewController = segue.destinationViewController;
+        viewController.player1NameLabel.text = playerNameTextField.text;
+	}
+}
 @end
