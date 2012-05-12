@@ -23,6 +23,7 @@
 		94A1AC1014BB9F1800DCF9A3 /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A1AC0F14BB9F1800DCF9A3 /* cards.png */; };
 		94A1AC1414BBA56200DCF9A3 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A1AC1314BBA56200DCF9A3 /* Deck.m */; };
 		E647260B153CD9D10016B89F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E647260A153CD9D10016B89F /* Player.m */; };
+		E689705D155DE536006C1C7A /* cardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = E689705C155DE536006C1C7A /* cardBack.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		94A1AC1314BBA56200DCF9A3 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		E6472609153CD9D10016B89F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
 		E647260A153CD9D10016B89F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
+		E689705C155DE536006C1C7A /* cardBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardBack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		E60BCBBE155369CB003EC6DE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E689705C155DE536006C1C7A /* cardBack.png */,
 				948090D0155CA7B8008C080B /* pokerTable.png */,
 				948090D1155CA7B8008C080B /* pokerTableWelcome.png */,
 				948090D2155CA7B8008C080B /* pot of gold.gif */,
@@ -194,6 +197,7 @@
 				948090D3155CA7B8008C080B /* pokerTable.png in Resources */,
 				948090D4155CA7B8008C080B /* pokerTableWelcome.png in Resources */,
 				948090D5155CA7B8008C080B /* pot of gold.gif in Resources */,
+				E689705D155DE536006C1C7A /* cardBack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
