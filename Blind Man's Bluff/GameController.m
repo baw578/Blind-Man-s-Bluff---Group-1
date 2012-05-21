@@ -22,6 +22,7 @@
 @synthesize chipsPlayer2Label;
 @synthesize chipsPlayer3Label;
 @synthesize chipsPlayer4Label;
+@synthesize potTotalLabel;
 @synthesize temp, playingCardSprite, mainCardArea, playingCardSprite2, mainCardArea2, playingCardSprite3, mainCardArea3,playingCardSprite4, mainCardArea4;
 @synthesize player1, player2, player3, player4;
 @synthesize playerArray;
@@ -54,6 +55,7 @@
     [self setChipsPlayer2Label:nil];
     [self setChipsPlayer3Label:nil];
     [self setChipsPlayer4Label:nil];
+    [self setPotTotalLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

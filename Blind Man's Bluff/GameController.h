@@ -45,5 +45,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *chipsPlayer2Label;
 @property (strong, nonatomic) IBOutlet UILabel *chipsPlayer3Label;
 @property (strong, nonatomic) IBOutlet UILabel *chipsPlayer4Label;
+@property (strong, nonatomic) IBOutlet UILabel *potTotalLabel;
 
 @end

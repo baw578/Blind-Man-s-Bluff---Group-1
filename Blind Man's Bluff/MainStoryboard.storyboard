@@ -82,6 +82,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PotTotal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="P4g-QA-JOL">
+                                <rect key="frame" x="418" y="357" width="159" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Chips:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="g4N-cQ-BuX">
                                 <rect key="frame" x="20" y="326" width="64" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -151,6 +158,7 @@
                         <outlet property="player2NameLabel" destination="k3A-6H-LVp" id="vOu-Og-8Sh"/>
                         <outlet property="player3NameLabel" destination="tm5-Tz-ioh" id="guk-VO-tQh"/>
                         <outlet property="player4NameLabel" destination="CJo-9L-K1y" id="qmG-UA-KBc"/>
+                        <outlet property="potTotalLabel" destination="P4g-QA-JOL" id="IR2-2n-CGk"/>
                     </connections>
                 </viewController>
             </objects>
@@ -238,6 +246,7 @@
                 <relationship kind="outlet" name="player2NameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="player3NameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="player4NameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="potTotalLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
