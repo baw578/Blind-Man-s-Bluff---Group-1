@@ -15,6 +15,8 @@
 		943705551468CA9D00755C5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 943705541468CA9D00755C5B /* main.m */; };
 		943705591468CA9D00755C5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 943705581468CA9D00755C5B /* AppDelegate.m */; };
 		9437055C1468CA9D00755C5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9437055B1468CA9D00755C5B /* ViewController.m */; };
+		945FBBB4156AF3E300C57F99 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945FBBB3156AF3E300C57F99 /* Icon-72@2x.png */; };
+		945FBBB7156AF3F300C57F99 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 945FBBB6156AF3F300C57F99 /* Icon-72.png */; };
 		948090C5155CA5A6008C080B /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948090C4155CA5A6008C080B /* GameController.m */; };
 		948090CF155CA798008C080B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948090CE155CA798008C080B /* MainStoryboard.storyboard */; };
 		948090D3155CA7B8008C080B /* pokerTable.png in Resources */ = {isa = PBXBuildFile; fileRef = 948090D0155CA7B8008C080B /* pokerTable.png */; };
@@ -41,6 +43,8 @@
 		943705581468CA9D00755C5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9437055A1468CA9D00755C5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9437055B1468CA9D00755C5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		945FBBB3156AF3E300C57F99 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "../Icon-72@2x.png"; sourceTree = "<group>"; };
+		945FBBB6156AF3F300C57F99 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../Icon-72.png"; sourceTree = "<group>"; };
 		948090C3155CA5A6008C080B /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		948090C4155CA5A6008C080B /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		948090CE155CA798008C080B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		E60BCBBE155369CB003EC6DE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				945FBBB6156AF3F300C57F99 /* Icon-72.png */,
+				945FBBB3156AF3E300C57F99 /* Icon-72@2x.png */,
 				E689705C155DE536006C1C7A /* cardBack.png */,
 				948090D0155CA7B8008C080B /* pokerTable.png */,
 				948090D1155CA7B8008C080B /* pokerTableWelcome.png */,
@@ -198,6 +204,8 @@
 				948090D4155CA7B8008C080B /* pokerTableWelcome.png in Resources */,
 				948090D5155CA7B8008C080B /* pot of gold.gif in Resources */,
 				E689705D155DE536006C1C7A /* cardBack.png in Resources */,
+				945FBBB4156AF3E300C57F99 /* Icon-72@2x.png in Resources */,
+				945FBBB7156AF3F300C57F99 /* Icon-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
