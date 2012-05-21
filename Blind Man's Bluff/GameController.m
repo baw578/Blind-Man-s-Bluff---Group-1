@@ -39,7 +39,7 @@ int chipAmountPlayer4;
 - (void)viewDidLoad
 {
     [self setInitialChipCount];
-    [self dealCards];
+    //[self dealCards];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -84,7 +84,7 @@ int chipAmountPlayer4;
     
     CGPoint currentPosition = playingCardSprite.center;
     currentPosition.x = tempCard1.cardCenter.x;
-    currentPosition.y = tempCard1.cardCenter.y;
+    currentPosition.y = tempCard1.cardCenter.y-1;
     playingCardSprite.center = currentPosition;
     
     mainCardArea.clipsToBounds = YES;
@@ -109,7 +109,7 @@ int chipAmountPlayer4;
     
     CGPoint currentPosition2 = playingCardSprite2.center;
     currentPosition2.x = tempCard2.cardCenter.x;
-    currentPosition2.y = tempCard2.cardCenter.y;
+    currentPosition2.y = tempCard2.cardCenter.y-1;
     playingCardSprite2.center = currentPosition2;
     
     mainCardArea2.clipsToBounds = YES;
