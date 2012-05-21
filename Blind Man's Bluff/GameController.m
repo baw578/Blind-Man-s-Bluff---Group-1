@@ -13,6 +13,7 @@
 @end
 
 @implementation GameController
+@synthesize player1EnteredName;
 @synthesize player1NameLabel;
 @synthesize player2NameLabel;
 @synthesize player3NameLabel;
@@ -22,10 +23,9 @@
 @synthesize chipsPlayer3Label;
 @synthesize chipsPlayer4Label;
 @synthesize temp, playingCardSprite, mainCardArea, playingCardSprite2, mainCardArea2, playingCardSprite3, mainCardArea3,playingCardSprite4, mainCardArea4;
-int chipAmountPlayer1;
-int chipAmountPlayer2;
-int chipAmountPlayer3;
-int chipAmountPlayer4;
+@synthesize player1, player2, player3, player4;
+@synthesize playerArray;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +38,7 @@ int chipAmountPlayer4;
 
 - (void)viewDidLoad
 {
-    [self setInitialChipCount];
+    [self initPlayers];
     //[self dealCards];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -65,6 +65,31 @@ int chipAmountPlayer4;
 	return YES;
 }
 
+- (void) initPlayers{
+    if (!playerArray) {
+        playerArray = [[NSMutableArray alloc] initWithCapacity:4];
+    }
+    
+    Player * tempPlayer1 = [[Player alloc] initPlayer:player1EnteredName andWithValue:2500 andWithBool:YES andWithCardValue:0];
+    Player * tempPlayer2 = [[Player alloc] initPlayer:@"Player 2" andWithValue:2500 andWithBool:NO andWithCardValue:0];
+    Player * tempPlayer3 = [[Player alloc] initPlayer:@"Player 3" andWithValue:2500 andWithBool:NO andWithCardValue:0];
+    Player * tempPlayer4 = [[Player alloc] initPlayer:@"Player 4" andWithValue:2500 andWithBool:NO andWithCardValue:0];
+    [playerArray addObject:tempPlayer1];
+    [playerArray addObject:tempPlayer2];
+    [playerArray addObject:tempPlayer3];
+    [playerArray addObject:tempPlayer4];
+    player1 = tempPlayer1;
+    player2 = tempPlayer2;
+    player3 = tempPlayer3;
+    player4 = tempPlayer4;
+    NSLog(@"\nPlayer1: %@\nChip Value: %d\nIs Human: %d",player1.playerName ,player1.chipCount,player1.playerTypeHuman);
+    NSLog(@"\nPlayer2: %@\nChip Value: %d\nIs Human: %d",player2.playerName,player2.chipCount,player2.playerTypeHuman);
+    NSLog(@"\nPlayer3: %@\nChip Value: %d\nIs Human: %d",player3.playerName,player3.chipCount,player3.playerTypeHuman);
+    NSLog(@"\nPlayer4: %@\nChip Value: %d\nIs Human: %d",player4.playerName,player4.chipCount,player4.playerTypeHuman);
+    [self updateChipLabels];
+    [self updatePlayerNameLables];
+}
+
 -(void) dealCards{
     temp = [[Deck alloc]initWithFullDeck];
     
@@ -75,6 +100,7 @@ int chipAmountPlayer4;
     //tempCard1.value = 13;
     
     [tempCard1 logThisCard];
+    player1.playerValueOfCard = tempCard1.value;
     
     //display first delt card
     if (!playingCardSprite) {
@@ -101,6 +127,8 @@ int chipAmountPlayer4;
     
     [tempCard2 logThisCard];
     
+    player2.playerValueOfCard = tempCard2.value;
+    
     //display second delt card
     if (!playingCardSprite2) {
         playingCardSprite2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cards.png"]];}
@@ -123,6 +151,7 @@ int chipAmountPlayer4;
     //tempCard3.value = 12;
     
     [tempCard3 logThisCard]; 
+    player3.playerValueOfCard = tempCard3.value;
     
     //display third delt card
     if (!playingCardSprite3) {
@@ -146,6 +175,7 @@ int chipAmountPlayer4;
     //tempCard4.value = 12;
     
     [tempCard4 logThisCard]; 
+    player4.playerValueOfCard = tempCard4.value;
     
     //display third delt card
     if (!playingCardSprite4) {
@@ -163,22 +193,41 @@ int chipAmountPlayer4;
     [mainCardArea4 addSubview:playingCardSprite4];
     [self.view addSubview:mainCardArea4];
     
+    [self alertWinnerOfRound];
+}
+
+
+- (void)alertWinnerOfRound{
+    
+    
+    
+    NSString * winner = [[NSString alloc] initWithFormat: @"temp", @"temp2"];
+    NSString * alertMessage = [NSString stringWithFormat:@"%@ won",winner];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Round Winner" message:alertMessage delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil];
+    [alert show];
 }
 
 -(void)setInitialChipCount{
     int chipStartingAmount = 2500;
-    chipAmountPlayer1 = chipStartingAmount;
-    chipAmountPlayer2 = chipStartingAmount;
-    chipAmountPlayer3 = chipStartingAmount;
-    chipAmountPlayer4 = chipStartingAmount;
+    player1.chipCount = chipStartingAmount;
+    player2.chipCount = chipStartingAmount;
+    player3.chipCount = chipStartingAmount;
+    player4.chipCount = chipStartingAmount;
     [self updateChipLabels];
 }
 
 -(void)updateChipLabels{
-    chipsPlayer1Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer1];
-    chipsPlayer2Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer2];
-    chipsPlayer3Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer3];
-    chipsPlayer4Label.text = [NSString stringWithFormat:@"%d", chipAmountPlayer4];
+    chipsPlayer1Label.text = [NSString stringWithFormat:@"%d", player1.chipCount];
+    chipsPlayer2Label.text = [NSString stringWithFormat:@"%d", player2.chipCount];
+    chipsPlayer3Label.text = [NSString stringWithFormat:@"%d", player3.chipCount];
+    chipsPlayer4Label.text = [NSString stringWithFormat:@"%d", player4.chipCount];
+}
+
+-(void)updatePlayerNameLables{
+    player1NameLabel.text = player1.playerName;
+    player2NameLabel.text = player2.playerName;
+    player3NameLabel.text = player3.playerName;
+    player4NameLabel.text = player4.playerName;
 }
 
 - (IBAction)dealCardsButton:(id)sender {

@@ -70,8 +70,8 @@
 {
 	if ([segue.identifier isEqualToString:@"enterName"])
 	{
-		GameController *viewController = segue.destinationViewController;
-        viewController.player1NameLabel.text = playerNameTextField.text;
+		GameController *gameController = segue.destinationViewController;
+        gameController.player1EnteredName = playerNameTextField.text;
 	}
 }
 @end

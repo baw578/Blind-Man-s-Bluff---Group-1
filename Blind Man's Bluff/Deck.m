@@ -17,7 +17,7 @@
         cardDeck = [[NSMutableArray alloc]initWithCapacity:52];
     }
     
-    for (int i = 1; i<=13; i++) {
+    for (int i = 2; i<=14; i++) {
         Card * temp1 = [[Card alloc]initWithSuit:@"Clubs" andWithValue:i andWithCenter:CGPointMake(1, 1)]; 
         Card * temp2 = [[Card alloc]initWithSuit:@"Spades" andWithValue:i andWithCenter:CGPointMake(1, 2)]; 
         Card * temp3 = [[Card alloc]initWithSuit:@"Hearts" andWithValue:i andWithCenter:CGPointMake(1, 1)]; 

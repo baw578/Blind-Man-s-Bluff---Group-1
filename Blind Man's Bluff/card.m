@@ -101,7 +101,7 @@
         cardCenter.y = (+98);
     }
     
-    NSLog(@"%@ of %@",cardValueName,suit);
+    NSLog(@"%@ of %@ has a value of %d",cardValueName,suit,value);
     NSLog(@"Located at %.1f,%.1f", cardCenter.x,cardCenter.y);
 }
 

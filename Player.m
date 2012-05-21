@@ -9,5 +9,14 @@
 #import "Player.h"
 
 @implementation Player
+@synthesize playerName, playerTypeHuman, chipCount, playerValueOfCard;
+
+- (id) initPlayer:(NSString *)newName andWithValue:(int)chipsStartingOut andWithBool: (BOOL)playerTypeIsHuman andWithCardValue:(int)playerCardValue{
+    playerName = newName;
+    chipCount = chipsStartingOut;
+    playerTypeHuman = playerTypeIsHuman;
+    playerValueOfCard = playerCardValue;
+    return self;
+}
 
 @end
