@@ -27,6 +27,7 @@
 
 @property (nonatomic, strong)UIView * mainCardArea2;
 @property (nonatomic, strong)UIImageView * playingCardSprite2;
+@property (strong, nonatomic) IBOutlet UIButton *dealCardsOutlet;
 
 - (IBAction)dealCardsButton:(id)sender;
 @property (nonatomic, strong)UIView * mainCardArea3;

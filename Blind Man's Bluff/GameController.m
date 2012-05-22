@@ -13,6 +13,7 @@
 @end
 
 @implementation GameController
+@synthesize dealCardsOutlet;
 @synthesize player1BetOutlet;
 @synthesize player1FoldOutlet;
 @synthesize player2BetOutlet;
@@ -74,6 +75,7 @@
     [self setPlayer3FoldOutlet:nil];
     [self setPlayer4BetOutlet:nil];
     [self setPlayer4FoldOutlet:nil];
+    [self setDealCardsOutlet:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -143,13 +145,14 @@
 }
 
 -(void) dealCards{
+    dealCardsOutlet.hidden = YES;
     temp = [[Deck alloc]initWithFullDeck];
     
     [temp shuffle];
     Card * tempCard1 = [temp dealACard];
     
     //pick card value
-    //tempCard1.value = 13;
+    //tempCard1.value = 7;
     
     [tempCard1 logThisCard];
     player1.playerValueOfCard = tempCard1.value;
@@ -175,7 +178,7 @@
     Card * tempCard2 = [temp dealACard];
     
     //pick card value
-    //tempCard2.value = 14;
+    //tempCard2.value = 7;
     
     [tempCard2 logThisCard];
     
@@ -200,7 +203,7 @@
     Card * tempCard3 = [temp dealACard];
     
     //pick card value
-    //tempCard3.value = 12;
+    //tempCard3.value = 7;
     
     [tempCard3 logThisCard]; 
     player3.playerValueOfCard = tempCard3.value;
@@ -224,7 +227,7 @@
     Card * tempCard4 = [temp dealACard];
     
     //pick card value
-    //tempCard4.value = 12;
+    //tempCard4.value = 5;
     
     [tempCard4 logThisCard]; 
     player4.playerValueOfCard = tempCard4.value;
@@ -370,30 +373,50 @@
     NSLog(@"Pot before potAward = %d", pot);
     int potAward;
     potAward = pot / winners;
+    NSString * winnerNames = @"";
     NSLog(@"Pot after potAward is determined = %d", pot);
     if (player1.playerIsWinner == YES) {
         player1.chipCount += potAward;
         pot -= potAward;
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 1"];
         NSLog(@"Pot at end of Player 1 winning = %d", pot);
     }
     if (player2.playerIsWinner == YES) {
         player2.chipCount += potAward;
         pot -= potAward;
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 2"];
         NSLog(@"Pot at end of Player 2 winning = %d", pot);
     }
     if (player3.playerIsWinner == YES) {
         player3.chipCount += potAward;
         pot -= potAward;
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 3"];
         NSLog(@"Pot at end of Player 3 winning = %d", pot);
     }
     if (player4.playerIsWinner == YES) {
         player4.chipCount += potAward;
         pot -= potAward;
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 4"];
         NSLog(@"Pot at end of Player 4 winning = %d", pot);
     }
     NSLog(@"Pot at end of Awards = %d", pot);
     [self disableBetting];
     [self updateChipLabels];
+    if (winners>=2) {
+        NSString * original = winnerNames;
+        NSLog(@"Name before the for: %@",winnerNames);
+        winnerNames = @"";
+        for (int i=0; i <=(winners * 8)-1; i += 8) {
+            NSString * new = [original substringFromIndex:i];
+            new = [new substringToIndex:8];
+            winnerNames = [winnerNames stringByAppendingFormat:@" & %@", new];
+            NSLog(@"%@",winnerNames);
+        }
+        winnerNames = [winnerNames substringFromIndex:3];
+    }
+    NSString * winningMessage = [NSString stringWithFormat:@"%@ won the pot worth %d", winnerNames, (potAward * winners)];
+    potTotalLabel.text = winningMessage;
+    dealCardsOutlet.hidden = NO;
 }
 
 - (void)alertWinnerOfRound{

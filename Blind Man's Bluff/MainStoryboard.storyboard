@@ -82,8 +82,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PotTotal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="P4g-QA-JOL">
-                                <rect key="frame" x="418" y="357" width="159" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PotTotal" lineBreakMode="wordWrap" numberOfLines="5" minimumFontSize="10" id="P4g-QA-JOL">
+                                <rect key="frame" x="411" y="294" width="245" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,6 +256,7 @@
                         <outlet property="chipsPlayer2Label" destination="ZGN-ol-5nc" id="tDh-b2-3FR"/>
                         <outlet property="chipsPlayer3Label" destination="Tdf-qN-24d" id="INC-ic-yKG"/>
                         <outlet property="chipsPlayer4Label" destination="Gck-0u-DUz" id="3pV-Ui-gcj"/>
+                        <outlet property="dealCardsOutlet" destination="pvX-A0-kaX" id="0to-7V-CTB"/>
                         <outlet property="player1BetOutlet" destination="L2i-YB-ouB" id="7aL-eF-ZH6"/>
                         <outlet property="player1FoldOutlet" destination="dE1-dQ-yTm" id="QPw-Ti-nLs"/>
                         <outlet property="player1NameLabel" destination="JMs-7O-HUL" id="fD4-j8-IVa"/>
@@ -343,6 +344,41 @@
         <image name="pokerTableWelcome.png" width="1024" height="768"/>
         <image name="pot of gold.gif" width="580" height="803"/>
     </resources>
+    <classes>
+        <class className="GameController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameController.h"/>
+            <relationships>
+                <relationship kind="action" name="dealCardsButton:"/>
+                <relationship kind="action" name="player1BetAction:"/>
+                <relationship kind="action" name="player1FoldAction:"/>
+                <relationship kind="outlet" name="chipsPlayer1Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chipsPlayer2Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chipsPlayer3Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="chipsPlayer4Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dealCardsOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player1BetOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player1FoldOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player1NameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player2BetOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player2FoldOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player2NameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player3BetOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player3FoldOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player3NameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player4BetOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player4FoldOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="player4NameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="potTotalLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playerNameButton:"/>
+                <relationship kind="outlet" name="playerNameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
