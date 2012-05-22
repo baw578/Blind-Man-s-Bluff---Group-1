@@ -247,6 +247,10 @@
     
     [mainCardArea4 addSubview:playingCardSprite4];
     [self.view addSubview:mainCardArea4];
+    mainCardArea.alpha = 1.0;
+    mainCardArea2.alpha = 1.0;
+    mainCardArea3.alpha = 1.0;
+    mainCardArea4.alpha = 1.0;
     [self allowBetting];
 }
 
@@ -282,6 +286,7 @@
         player2.folds = YES;
         player2.playerValueOfCard = 0;
         player2FoldOutlet.hidden = NO;
+        mainCardArea2.alpha = 0.7;
     }else {
         player2.folds = NO;
         player2.chipCount -= bet;
@@ -293,6 +298,7 @@
         player3.folds = YES;
         player3.playerValueOfCard = 0;
         player3FoldOutlet.hidden = NO;
+        mainCardArea3.alpha = 0.7;
     }else {
         player3.folds = NO;
         player3.chipCount -= bet;
@@ -304,6 +310,7 @@
         player4.folds = YES;
         player4.playerValueOfCard = 0;
         player4FoldOutlet.hidden = NO;
+        mainCardArea4.alpha = 0.7;
     }else {
         player4.folds = NO;
         player4.chipCount -= bet;
@@ -331,6 +338,7 @@
     player1.playerValueOfCard = 0;
     mainCardArea.hidden = NO;
     NSLog(@"Did Player 1 fold? %d", player1.folds);
+    mainCardArea.alpha = 0.7;
     [self determineWinner];
 }
 
