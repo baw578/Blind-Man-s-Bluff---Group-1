@@ -41,10 +41,52 @@
 @property (strong, nonatomic) IBOutlet UILabel *player3NameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *player4NameLabel;
 
+@property int bet;
 @property (strong, nonatomic) IBOutlet UILabel *chipsPlayer1Label;
 @property (strong, nonatomic) IBOutlet UILabel *chipsPlayer2Label;
 @property (strong, nonatomic) IBOutlet UILabel *chipsPlayer3Label;
 @property (strong, nonatomic) IBOutlet UILabel *chipsPlayer4Label;
 @property (strong, nonatomic) IBOutlet UILabel *potTotalLabel;
+@property int pot;
+
+- (IBAction)player1BetAction:(id)sender;
+- (IBAction)player1FoldAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *player1BetOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *player1FoldOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *player2BetOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *player2FoldOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *player3BetOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *player3FoldOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *player4BetOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *player4FoldOutlet;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

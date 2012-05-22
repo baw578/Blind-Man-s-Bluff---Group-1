@@ -13,6 +13,14 @@
 @end
 
 @implementation GameController
+@synthesize player1BetOutlet;
+@synthesize player1FoldOutlet;
+@synthesize player2BetOutlet;
+@synthesize player2FoldOutlet;
+@synthesize player3BetOutlet;
+@synthesize player3FoldOutlet;
+@synthesize player4BetOutlet;
+@synthesize player4FoldOutlet;
 @synthesize player1EnteredName;
 @synthesize player1NameLabel;
 @synthesize player2NameLabel;
@@ -26,6 +34,7 @@
 @synthesize temp, playingCardSprite, mainCardArea, playingCardSprite2, mainCardArea2, playingCardSprite3, mainCardArea3,playingCardSprite4, mainCardArea4;
 @synthesize player1, player2, player3, player4;
 @synthesize playerArray;
+@synthesize bet, pot;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,6 +49,7 @@
 - (void)viewDidLoad
 {
     [self initPlayers];
+    [self disableBetting];
     //[self dealCards];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -56,6 +66,14 @@
     [self setChipsPlayer3Label:nil];
     [self setChipsPlayer4Label:nil];
     [self setPotTotalLabel:nil];
+    [self setPlayer1BetOutlet:nil];
+    [self setPlayer1FoldOutlet:nil];
+    [self setPlayer2BetOutlet:nil];
+    [self setPlayer2FoldOutlet:nil];
+    [self setPlayer3BetOutlet:nil];
+    [self setPlayer3FoldOutlet:nil];
+    [self setPlayer4BetOutlet:nil];
+    [self setPlayer4FoldOutlet:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -67,11 +85,38 @@
 	return YES;
 }
 
+#pragma mark Init
+-(void)setInitialChipCount{
+    int chipStartingAmount = 2500;
+    player1.chipCount = chipStartingAmount;
+    player2.chipCount = chipStartingAmount;
+    player3.chipCount = chipStartingAmount;
+    player4.chipCount = chipStartingAmount;
+    [self updateChipLabels];
+}
+
+-(void)updateChipLabels{
+    chipsPlayer1Label.text = [NSString stringWithFormat:@"%d", player1.chipCount];
+    chipsPlayer2Label.text = [NSString stringWithFormat:@"%d", player2.chipCount];
+    chipsPlayer3Label.text = [NSString stringWithFormat:@"%d", player3.chipCount];
+    chipsPlayer4Label.text = [NSString stringWithFormat:@"%d", player4.chipCount];
+    potTotalLabel.text = [NSString stringWithFormat:@"%d", pot];
+}
+
+-(void)updatePlayerNameLables{
+    player1NameLabel.text = player1.playerName;
+    player2NameLabel.text = player2.playerName;
+    player3NameLabel.text = player3.playerName;
+    player4NameLabel.text = player4.playerName;
+}
+
 - (void) initPlayers{
     if (!playerArray) {
         playerArray = [[NSMutableArray alloc] initWithCapacity:4];
     }
-    
+    if ([player1EnteredName isEqualToString:@""]) {
+        player1EnteredName = @"Player 1";
+    }
     Player * tempPlayer1 = [[Player alloc] initPlayer:player1EnteredName andWithValue:2500 andWithBool:YES andWithCardValue:0];
     Player * tempPlayer2 = [[Player alloc] initPlayer:@"Player 2" andWithValue:2500 andWithBool:NO andWithCardValue:0];
     Player * tempPlayer3 = [[Player alloc] initPlayer:@"Player 3" andWithValue:2500 andWithBool:NO andWithCardValue:0];
@@ -90,6 +135,11 @@
     NSLog(@"\nPlayer4: %@\nChip Value: %d\nIs Human: %d",player4.playerName,player4.chipCount,player4.playerTypeHuman);
     [self updateChipLabels];
     [self updatePlayerNameLables];
+}
+
+#pragma mark Deal
+- (IBAction)dealCardsButton:(id)sender {
+    [self dealCards];
 }
 
 -(void) dealCards{
@@ -119,7 +169,7 @@
     
     [mainCardArea addSubview:playingCardSprite];
     [self.view addSubview:mainCardArea];
-    
+    mainCardArea.hidden = YES;
     
     
     Card * tempCard2 = [temp dealACard];
@@ -194,10 +244,157 @@
     
     [mainCardArea4 addSubview:playingCardSprite4];
     [self.view addSubview:mainCardArea4];
-    
-    [self alertWinnerOfRound];
+    [self allowBetting];
 }
 
+
+#pragma mark Betting
+- (void) disableBetting {
+    player1BetOutlet.hidden = YES;
+    player1FoldOutlet.hidden = YES;
+    player2BetOutlet.hidden = YES;
+    player2FoldOutlet.hidden = YES;
+    player3BetOutlet.hidden = YES;
+    player3FoldOutlet.hidden = YES;
+    player4BetOutlet.hidden = YES;
+    player4FoldOutlet.hidden = YES;
+}
+
+- (void) showBetting {
+    player1BetOutlet.hidden = NO;
+    player1FoldOutlet.hidden = NO;
+}
+
+- (void) allowBetting {
+    bet = 100;
+    /*if (player2.playerValueOfCard + player4.playerValueOfCard + player3.playerValueOfCard >= 27) {
+        player1.folds = YES;
+        player1.playerValueOfCard = 0;
+    }else {
+        player1.folds = NO;
+        player1.chipCount -= bet;
+        pot += bet;
+    }*/
+    if (player1.playerValueOfCard + player4.playerValueOfCard + player3.playerValueOfCard >= 27) {
+        player2.folds = YES;
+        player2.playerValueOfCard = 0;
+        player2FoldOutlet.hidden = NO;
+    }else {
+        player2.folds = NO;
+        player2.chipCount -= bet;
+        pot += bet;
+        player2BetOutlet.hidden = NO;
+    }
+    NSLog(@"Did Player 2 fold? %d", player2.folds);
+    if (player1.playerValueOfCard + player2.playerValueOfCard + player4.playerValueOfCard >= 27) {
+        player3.folds = YES;
+        player3.playerValueOfCard = 0;
+        player3FoldOutlet.hidden = NO;
+    }else {
+        player3.folds = NO;
+        player3.chipCount -= bet;
+        pot += bet;
+        player3BetOutlet.hidden = NO;
+    }
+    NSLog(@"Did Player 3 fold? %d", player3.folds);
+    if (player1.playerValueOfCard + player2.playerValueOfCard + player3.playerValueOfCard >= 27) {
+        player4.folds = YES;
+        player4.playerValueOfCard = 0;
+        player4FoldOutlet.hidden = NO;
+    }else {
+        player4.folds = NO;
+        player4.chipCount -= bet;
+        pot += bet;
+        player4BetOutlet.hidden = NO;
+    }
+    NSLog(@"Did Player 4 fold? %d", player4.folds);
+    NSLog(@"Pot at end of allowBetting = %d", pot);
+    [self updateChipLabels];
+    [self showBetting];
+    [self updateChipLabels];
+}
+
+- (IBAction)player1BetAction:(id)sender {
+    player1.folds = NO;
+    player1.chipCount -= bet;
+    pot += bet; 
+    mainCardArea.hidden = NO;
+    NSLog(@"Did Player 1 fold? %d", player1.folds);
+    [self determineWinner];
+}
+
+- (IBAction)player1FoldAction:(id)sender {
+    player1.folds = YES;
+    player1.playerValueOfCard = 0;
+    mainCardArea.hidden = NO;
+    NSLog(@"Did Player 1 fold? %d", player1.folds);
+    [self determineWinner];
+}
+
+#pragma mark Determine Winners
+- (void) determineWinner{
+    int winners = 0;
+    if (player1.playerValueOfCard >= player2.playerValueOfCard && player1.playerValueOfCard >= player3.playerValueOfCard && player1.playerValueOfCard >= player4.playerValueOfCard) {
+        player1.playerIsWinner = YES;
+        winners++;
+    }else {
+        player1.playerIsWinner = NO;
+    }
+    if (player2.playerValueOfCard >= player1.playerValueOfCard && player2.playerValueOfCard >= player3.playerValueOfCard && player2.playerValueOfCard >= player4.playerValueOfCard) {
+        player2.playerIsWinner = YES;
+        winners++;
+    }else {
+        player2.playerIsWinner = NO;
+    }
+    if (player3.playerValueOfCard >= player2.playerValueOfCard && player3.playerValueOfCard >= player1.playerValueOfCard && player3.playerValueOfCard >= player4.playerValueOfCard) {
+        player3.playerIsWinner = YES;
+        winners++;
+    }else {
+        player3.playerIsWinner = NO;
+    }
+    if (player4.playerValueOfCard >= player2.playerValueOfCard && player4.playerValueOfCard >= player3.playerValueOfCard && player4.playerValueOfCard >= player1.playerValueOfCard) {
+        player4.playerIsWinner = YES;
+        winners++;
+    }else {
+        player4.playerIsWinner = NO;
+    }
+    NSLog(@"Did Player1 win? %d", player1.playerIsWinner);
+    NSLog(@"Did Player2 win? %d", player2.playerIsWinner);
+    NSLog(@"Did Player3 win? %d", player3.playerIsWinner);
+    NSLog(@"Did Player4 win? %d", player4.playerIsWinner);
+    if (winners>=2) {
+        NSLog(@"There are %d winners.", winners);
+    }else {
+        NSLog(@"There is %d winner.", winners);
+    }
+    NSLog(@"Pot before potAward = %d", pot);
+    int potAward;
+    potAward = pot / winners;
+    NSLog(@"Pot after potAward is determined = %d", pot);
+    if (player1.playerIsWinner == YES) {
+        player1.chipCount += potAward;
+        pot -= potAward;
+        NSLog(@"Pot at end of Player 1 winning = %d", pot);
+    }
+    if (player2.playerIsWinner == YES) {
+        player2.chipCount += potAward;
+        pot -= potAward;
+        NSLog(@"Pot at end of Player 2 winning = %d", pot);
+    }
+    if (player3.playerIsWinner == YES) {
+        player3.chipCount += potAward;
+        pot -= potAward;
+        NSLog(@"Pot at end of Player 3 winning = %d", pot);
+    }
+    if (player4.playerIsWinner == YES) {
+        player4.chipCount += potAward;
+        pot -= potAward;
+        NSLog(@"Pot at end of Player 4 winning = %d", pot);
+    }
+    NSLog(@"Pot at end of Awards = %d", pot);
+    [self disableBetting];
+    [self updateChipLabels];
+}
 
 - (void)alertWinnerOfRound{
     
@@ -209,30 +406,6 @@
     [alert show];
 }
 
--(void)setInitialChipCount{
-    int chipStartingAmount = 2500;
-    player1.chipCount = chipStartingAmount;
-    player2.chipCount = chipStartingAmount;
-    player3.chipCount = chipStartingAmount;
-    player4.chipCount = chipStartingAmount;
-    [self updateChipLabels];
-}
 
--(void)updateChipLabels{
-    chipsPlayer1Label.text = [NSString stringWithFormat:@"%d", player1.chipCount];
-    chipsPlayer2Label.text = [NSString stringWithFormat:@"%d", player2.chipCount];
-    chipsPlayer3Label.text = [NSString stringWithFormat:@"%d", player3.chipCount];
-    chipsPlayer4Label.text = [NSString stringWithFormat:@"%d", player4.chipCount];
-}
 
--(void)updatePlayerNameLables{
-    player1NameLabel.text = player1.playerName;
-    player2NameLabel.text = player2.playerName;
-    player3NameLabel.text = player3.playerName;
-    player4NameLabel.text = player4.playerName;
-}
-
-- (IBAction)dealCardsButton:(id)sender {
-    [self dealCards];
-}
 @end

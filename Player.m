@@ -10,6 +10,7 @@
 
 @implementation Player
 @synthesize playerName, playerTypeHuman, chipCount, playerValueOfCard;
+@synthesize playerIsWinner, playerHasChips, folds;
 
 - (id) initPlayer:(NSString *)newName andWithValue:(int)chipsStartingOut andWithBool: (BOOL)playerTypeIsHuman andWithCardValue:(int)playerCardValue{
     playerName = newName;

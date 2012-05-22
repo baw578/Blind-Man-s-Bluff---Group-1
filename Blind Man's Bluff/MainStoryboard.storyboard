@@ -145,6 +145,108 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dE1-dQ-yTm">
+                                <rect key="frame" x="164" y="235" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="FOLD">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="player1FoldAction:" destination="sU2-6a-9tq" eventType="touchUpInside" id="6AS-Eh-xwg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L2i-YB-ouB">
+                                <rect key="frame" x="84" y="235" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="BET">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="player1BetAction:" destination="sU2-6a-9tq" eventType="touchUpInside" id="dnd-oY-4gv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vOe-gN-qFK">
+                                <rect key="frame" x="783" y="235" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="BET">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2D7-oE-mxw">
+                                <rect key="frame" x="863" y="235" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="FOLD">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3i0-Jh-Liw">
+                                <rect key="frame" x="164" y="478" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="FOLD">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nEl-za-iHW">
+                                <rect key="frame" x="84" y="478" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="BET">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tWN-fO-eRq">
+                                <rect key="frame" x="783" y="478" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="BET">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RLg-mu-Xs7">
+                                <rect key="frame" x="863" y="478" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="FOLD">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -154,9 +256,17 @@
                         <outlet property="chipsPlayer2Label" destination="ZGN-ol-5nc" id="tDh-b2-3FR"/>
                         <outlet property="chipsPlayer3Label" destination="Tdf-qN-24d" id="INC-ic-yKG"/>
                         <outlet property="chipsPlayer4Label" destination="Gck-0u-DUz" id="3pV-Ui-gcj"/>
+                        <outlet property="player1BetOutlet" destination="L2i-YB-ouB" id="7aL-eF-ZH6"/>
+                        <outlet property="player1FoldOutlet" destination="dE1-dQ-yTm" id="QPw-Ti-nLs"/>
                         <outlet property="player1NameLabel" destination="JMs-7O-HUL" id="fD4-j8-IVa"/>
+                        <outlet property="player2BetOutlet" destination="vOe-gN-qFK" id="cOP-LL-ePW"/>
+                        <outlet property="player2FoldOutlet" destination="2D7-oE-mxw" id="FFY-8J-YuG"/>
                         <outlet property="player2NameLabel" destination="k3A-6H-LVp" id="vOu-Og-8Sh"/>
+                        <outlet property="player3BetOutlet" destination="tWN-fO-eRq" id="2ov-X5-2ss"/>
+                        <outlet property="player3FoldOutlet" destination="RLg-mu-Xs7" id="pPf-nr-U4m"/>
                         <outlet property="player3NameLabel" destination="tm5-Tz-ioh" id="guk-VO-tQh"/>
+                        <outlet property="player4BetOutlet" destination="nEl-za-iHW" id="RHK-Ur-8PK"/>
+                        <outlet property="player4FoldOutlet" destination="3i0-Jh-Liw" id="7Hf-E6-AJJ"/>
                         <outlet property="player4NameLabel" destination="CJo-9L-K1y" id="qmG-UA-KBc"/>
                         <outlet property="potTotalLabel" destination="P4g-QA-JOL" id="IR2-2n-CGk"/>
                     </connections>
@@ -233,30 +343,6 @@
         <image name="pokerTableWelcome.png" width="1024" height="768"/>
         <image name="pot of gold.gif" width="580" height="803"/>
     </resources>
-    <classes>
-        <class className="GameController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameController.h"/>
-            <relationships>
-                <relationship kind="action" name="dealCardsButton:"/>
-                <relationship kind="outlet" name="chipsPlayer1Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="chipsPlayer2Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="chipsPlayer3Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="chipsPlayer4Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player1NameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player2NameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player3NameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player4NameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="potTotalLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="playerNameButton:"/>
-                <relationship kind="outlet" name="playerNameTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>

@@ -14,6 +14,9 @@
 @property int chipCount;
 @property BOOL playerTypeHuman;
 @property int playerValueOfCard;
+@property BOOL playerIsWinner;
+@property BOOL playerHasChips;
+@property BOOL folds;
 
 - (id) initPlayer:(NSString *)newName andWithValue:(int)chipsStartingOut andWithBool: (BOOL)playerTypeIsHuman andWithCardValue:(int)playerCardValue;
 
