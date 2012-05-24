@@ -37,7 +37,7 @@
 @synthesize temp, playingCardSprite, mainCardArea, playingCardSprite2, mainCardArea2, playingCardSprite3, mainCardArea3,playingCardSprite4, mainCardArea4;
 @synthesize player1, player2, player3, player4;
 @synthesize playerArray;
-@synthesize bet, pot;
+@synthesize bet, pot, winningMessage;
 
 
 @synthesize round;
@@ -94,7 +94,7 @@
 	return YES;
 }
 
-#pragma mark Init
+#pragma mark - Init
 -(void)setInitialChipCount{
     int chipStartingAmount = 2500;
     player1.chipCount = chipStartingAmount;
@@ -103,6 +103,8 @@
     player4.chipCount = chipStartingAmount;
     [self updateChipLabels];
     dealCardsOutlet.hidden = NO;
+    round=1;
+    roundLabel.text = [NSString stringWithFormat: @"%d",round];
 }
 
 -(void)updateChipLabels{
@@ -147,7 +149,7 @@
     [self updatePlayerNameLables];
 }
 
-#pragma mark Deal
+#pragma mark - Deal
 - (IBAction)dealCardsButton:(id)sender {
     [self dealCards];
 }
@@ -263,7 +265,7 @@
 }
 
 
-#pragma mark Betting
+#pragma mark - Betting
 - (void) disableBetting {
     player1BetOutlet.hidden = YES;
     player1FoldOutlet.hidden = YES;
@@ -338,7 +340,7 @@
     mainCardArea.hidden = NO;
     NSLog(@"Did Player 1 fold? %d", player1.folds);
     [self updateChipLabels];
-    [self determineWinner];
+    [self determineWinnerofRound];
 }
 
 - (IBAction)player1FoldAction:(id)sender {
@@ -347,11 +349,11 @@
     mainCardArea.hidden = NO;
     NSLog(@"Did Player 1 fold? %d", player1.folds);
     mainCardArea.alpha = 0.7;
-    [self determineWinner];
+    [self determineWinnerofRound];
 }
 
-#pragma mark Determine Winners
-- (void) determineWinner{
+#pragma mark - Determine Winners
+- (void) determineWinnerofRound{
     int winners = 0;
     if (player1.playerValueOfCard >= player2.playerValueOfCard && player1.playerValueOfCard >= player3.playerValueOfCard && player1.playerValueOfCard >= player4.playerValueOfCard) {
         player1.playerIsWinner = YES;
@@ -430,7 +432,7 @@
         }
         winnerNames = [winnerNames substringFromIndex:3];
     }
-    NSString * winningMessage = [NSString stringWithFormat:@"%@ won the pot worth %d", winnerNames, (potAward * winners)];
+    winningMessage = [NSString stringWithFormat:@"%@ won the pot worth %d", winnerNames, (potAward * winners)];
     potTotalLabel.text = winningMessage;
     round ++;
     [self determineIfTheGameIsOver];
@@ -438,25 +440,86 @@
 
 - (void)determineIfTheGameIsOver
 {
-    if (round>=10) {
-            [self alertWinnerOfRound];
+    if (round>=11) {
+            [self determineWinnerOfGame];
     }else {
         roundLabel.text = [NSString stringWithFormat: @"%d",round];
         dealCardsOutlet.hidden = NO;
     }
 }
 
-- (void)alertWinnerOfRound{
-    
-    
-    
-    NSString * winnerName;
-    NSString * alertMessage = [NSString stringWithFormat:@"%@ won",winnerName];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Round Winner" 
+- (void)determineWinnerOfGame{
+    int winners = 0;
+    if (player1.chipCount >= player2.chipCount && player1.chipCount >= player3.playerValueOfCard && player1.chipCount >= player4.chipCount) {
+        player1.playerIsWinner = YES;
+        winners++;
+    }else {
+        player1.playerIsWinner = NO;
+    }
+    if (player2.chipCount >= player1.chipCount && player2.chipCount >= player3.chipCount && player2.chipCount >= player4.chipCount) {
+        player2.playerIsWinner = YES;
+        winners++;
+    }else {
+        player2.playerIsWinner = NO;
+    }
+    if (player3.chipCount >= player2.chipCount && player3.chipCount >= player1.chipCount && player3.chipCount >= player4.chipCount) {
+        player3.playerIsWinner = YES;
+        winners++;
+    }else {
+        player3.playerIsWinner = NO;
+    }
+    if (player4.chipCount >= player2.chipCount && player4.chipCount >= player3.chipCount && player4.chipCount >= player1.chipCount) {
+        player4.playerIsWinner = YES;
+        winners++;
+    }else {
+        player4.playerIsWinner = NO;
+    }
+    NSLog(@"Did Player1 win? %d", player1.playerIsWinner);
+    NSLog(@"Did Player2 win? %d", player2.playerIsWinner);
+    NSLog(@"Did Player3 win? %d", player3.playerIsWinner);
+    NSLog(@"Did Player4 win? %d", player4.playerIsWinner);
+    if (winners>=2) {
+        NSLog(@"There are %d winners.", winners);
+    }else {
+        NSLog(@"There is %d winner.", winners);
+    }
+    NSString * winnerNames = @"";
+    NSLog(@"Pot after potAward is determined = %d", pot);
+    if (player1.playerIsWinner == YES) {
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 1"];
+    }
+    if (player2.playerIsWinner == YES) {
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 2"];
+    }
+    if (player3.playerIsWinner == YES) {
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 3"];
+    }
+    if (player4.playerIsWinner == YES) {
+        winnerNames = [winnerNames stringByAppendingFormat:@"Player 4"];
+    }
+    if (winners>=2) {
+        NSString * original = winnerNames;
+        winnerNames = @"";
+        for (int i=0; i <=(winners * 8)-1; i += 8) {
+            NSString * new = [original substringFromIndex:i];
+            new = [new substringToIndex:8];
+            winnerNames = [winnerNames stringByAppendingFormat:@" & %@", new];
+            NSLog(@"%@",winnerNames);
+        }
+        winnerNames = [winnerNames substringFromIndex:3];
+    }
+    winningMessage = [NSString stringWithFormat:@"%@ won", winnerNames];
+    NSLog(@"%@",winningMessage);
+    [self alertWinnerOfGame];
+}
+
+- (void)alertWinnerOfGame{
+    NSString * alertMessage = [NSString stringWithFormat:@"%@",winningMessage];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Game Winner" 
                                                    message:alertMessage 
                                                   delegate:self 
                                          cancelButtonTitle:@"Quit" 
-                                         otherButtonTitles:@"Play Again?", nil];
+                                         otherButtonTitles:@"Play Again", nil];
     [alert show];
 }
 

@@ -63,7 +63,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *player4FoldOutlet;
 @property (strong, nonatomic) IBOutlet UILabel *roundLabel;
 
-
+@property (strong, nonatomic) NSString * winningMessage;
 
 
 
