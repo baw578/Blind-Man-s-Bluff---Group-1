@@ -298,6 +298,59 @@
             <point key="canvasLocation" x="1610" y="-128"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="jxT-Ga-yJW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYb-Ig-pyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController autoresizesArchivedViewToFullSize="NO" id="Jhj-KC-2lc" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2N-DS-pYI">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="Nh2-QU-dUM">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="About Blind Man's Bluff" id="hNl-rj-Bne">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="NqL-1U-91Q">
+                                            <connections>
+                                                <segue destination="Rhf-FQ-1Yu" kind="modal" identifier="aboutTheGame" customClass="FlipSideViewController" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="P1a-cL-Vsl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" id="0yw-zB-cTK">
+                                <rect key="frame" x="258" y="109" width="508" height="529"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="13" minimumFontSize="10" adjustsFontSizeToFit="NO" id="HlB-eQ-Kkp">
+                                        <rect key="frame" x="20" y="60" width="468" height="410"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Blind Man's Bluff is card game that uses a standard 52 card deck. The goal is to have the highest amount of chips at the end of 10 rounds. Each player is dealt 1 card and places it to where it is viewable by all players except themselves. You will then bet or fold based off of how good you think your card is compared to the other players. The winner of the round is the player with the highest card value.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="BhL-jF-LIe">
+                                        <rect key="frame" x="195" y="74" width="118" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2764" y="-118"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="Esr-id-XRV">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsv-it-alL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,6 +398,21 @@
                                 <connections>
                                     <action selector="playerNameButton:" destination="Rhf-FQ-1Yu" eventType="touchUpInside" id="K6j-jS-i1E"/>
                                     <segue destination="sU2-6a-9tq" kind="modal" identifier="enterName" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Ncy-2G-fOg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="5HP-mc-LrD">
+                                <rect key="frame" x="503" y="315" width="18" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jhj-KC-2lc" kind="modal" id="GZx-Mg-X8V"/>
                                 </connections>
                             </button>
                         </subviews>
