@@ -7,6 +7,7 @@
 //
 
 #import "GameController.h"
+#import "Player.h"
 
 @interface GameController ()
 
@@ -22,6 +23,7 @@
 @synthesize player3FoldOutlet;
 @synthesize player4BetOutlet;
 @synthesize player4FoldOutlet;
+@synthesize roundLabel;
 @synthesize player1EnteredName;
 @synthesize player1NameLabel;
 @synthesize player2NameLabel;
@@ -38,6 +40,8 @@
 @synthesize bet, pot;
 
 
+@synthesize round;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,6 +53,8 @@
 
 - (void)viewDidLoad
 {
+    round = 1;
+    roundLabel.text = [NSString stringWithFormat: @"%d",round];
     [self initPlayers];
     [self disableBetting];
     //[self dealCards];
@@ -76,6 +82,7 @@
     [self setPlayer4BetOutlet:nil];
     [self setPlayer4FoldOutlet:nil];
     [self setDealCardsOutlet:nil];
+    [self setRoundLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -95,6 +102,7 @@
     player3.chipCount = chipStartingAmount;
     player4.chipCount = chipStartingAmount;
     [self updateChipLabels];
+    dealCardsOutlet.hidden = NO;
 }
 
 -(void)updateChipLabels{
@@ -321,7 +329,6 @@
     NSLog(@"Pot at end of allowBetting = %d", pot);
     [self updateChipLabels];
     [self showBetting];
-    [self updateChipLabels];
 }
 
 - (IBAction)player1BetAction:(id)sender {
@@ -330,6 +337,7 @@
     pot += bet; 
     mainCardArea.hidden = NO;
     NSLog(@"Did Player 1 fold? %d", player1.folds);
+    [self updateChipLabels];
     [self determineWinner];
 }
 
@@ -424,19 +432,40 @@
     }
     NSString * winningMessage = [NSString stringWithFormat:@"%@ won the pot worth %d", winnerNames, (potAward * winners)];
     potTotalLabel.text = winningMessage;
-    dealCardsOutlet.hidden = NO;
+    round ++;
+    [self determineIfTheGameIsOver];
+}
+
+- (void)determineIfTheGameIsOver
+{
+    if (round>=10) {
+            [self alertWinnerOfRound];
+    }else {
+        roundLabel.text = [NSString stringWithFormat: @"%d",round];
+        dealCardsOutlet.hidden = NO;
+    }
 }
 
 - (void)alertWinnerOfRound{
     
     
     
-    NSString * winner = [[NSString alloc] initWithFormat: @"temp", @"temp2"];
-    NSString * alertMessage = [NSString stringWithFormat:@"%@ won",winner];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Round Winner" message:alertMessage delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil];
+    NSString * winnerName;
+    NSString * alertMessage = [NSString stringWithFormat:@"%@ won",winnerName];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Round Winner" 
+                                                   message:alertMessage 
+                                                  delegate:self 
+                                         cancelButtonTitle:@"Quit" 
+                                         otherButtonTitles:@"Play Again?", nil];
     [alert show];
 }
 
-
+-(void)alertView:(UIAlertView *) alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex ==0){
+        [self dismissModalViewControllerAnimated:YES];
+    }else {
+        [self setInitialChipCount];
+    }
+}
 
 @end

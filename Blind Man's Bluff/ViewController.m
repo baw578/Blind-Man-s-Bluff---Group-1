@@ -10,6 +10,7 @@
 #import "GameController.h"
 
 
+
 @implementation ViewController
 @synthesize playerNameTextField;
 
@@ -74,4 +75,6 @@
         gameController.player1EnteredName = playerNameTextField.text;
 	}
 }
+
+
 @end

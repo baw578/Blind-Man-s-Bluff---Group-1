@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 
-@interface Player : NSObject
+@interface Player : NSObject  
+
 @property NSString * playerName;
 @property int chipCount;
 @property BOOL playerTypeHuman;
@@ -19,5 +20,6 @@
 @property BOOL folds;
 
 - (id) initPlayer:(NSString *)newName andWithValue:(int)chipsStartingOut andWithBool: (BOOL)playerTypeIsHuman andWithCardValue:(int)playerCardValue;
+
 
 @end

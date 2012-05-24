@@ -7,6 +7,7 @@
 //
 
 #import "Player.h"
+#import "GameController.h"
 
 @implementation Player
 @synthesize playerName, playerTypeHuman, chipCount, playerValueOfCard;
@@ -19,5 +20,6 @@
     playerValueOfCard = playerCardValue;
     return self;
 }
+
 
 @end

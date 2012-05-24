@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *playerNameTextField;
 - (IBAction)playerNameButton:(id)sender;
 

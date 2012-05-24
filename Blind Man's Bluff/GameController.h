@@ -10,10 +10,10 @@
 #import "Deck.h"
 #import "Player.h"
 
-@interface GameController : UIViewController
+@interface GameController  : UIViewController
 
 
-
+@property int round;
 
 @property (nonatomic, strong) Deck * temp;
 @property (nonatomic, strong) NSMutableArray * playerArray;
@@ -61,6 +61,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *player3FoldOutlet;
 @property (strong, nonatomic) IBOutlet UIButton *player4BetOutlet;
 @property (strong, nonatomic) IBOutlet UIButton *player4FoldOutlet;
+@property (strong, nonatomic) IBOutlet UILabel *roundLabel;
 
 
 
